@@ -18,6 +18,9 @@
 		D0047E231FAE898400B2B1AA /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0047E221FAE898400B2B1AA /* ArticleViewController.swift */; };
 		D0047E251FAE8A1300B2B1AA /* StarredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0047E241FAE8A1300B2B1AA /* StarredViewController.swift */; };
 		D0047E271FAE8A4600B2B1AA /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0047E261FAE8A4600B2B1AA /* ExploreViewController.swift */; };
+		D00F59C31FCF6ACB00906142 /* Newsflash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D00F59C11FCF6ACB00906142 /* Newsflash.xcdatamodeld */; };
+		D00F59C71FCF7E8B00906142 /* StarredTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F59C61FCF7E8B00906142 /* StarredTableViewController.swift */; };
+		D00F59C91FCFA72B00906142 /* StarredTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F59C81FCFA72B00906142 /* StarredTableViewCell.swift */; };
 		D0A114F91FBD3D5600D04102 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A114F81FBD3D5600D04102 /* Main.storyboard */; };
 		DA3D3C911720A348CB575570 /* Pods_NewsflashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 396A7DF811127100CEB5DDDA /* Pods_NewsflashUITests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +65,9 @@
 		D0047E221FAE898400B2B1AA /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		D0047E241FAE8A1300B2B1AA /* StarredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredViewController.swift; sourceTree = "<group>"; };
 		D0047E261FAE8A4600B2B1AA /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		D00F59C21FCF6ACB00906142 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D00F59C61FCF7E8B00906142 /* StarredTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredTableViewController.swift; sourceTree = "<group>"; };
+		D00F59C81FCFA72B00906142 /* StarredTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredTableViewCell.swift; sourceTree = "<group>"; };
 		D0A114F81FBD3D5600D04102 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../NewsFeed/NewsFeed/Main.storyboard; sourceTree = "<group>"; };
 		D1FF3546154B6657A6B7C0D0 /* Pods-Newsflash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Newsflash.release.xcconfig"; path = "Pods/Target Support Files/Pods-Newsflash/Pods-Newsflash.release.xcconfig"; sourceTree = "<group>"; };
 		E0427A07AE350E3EEB7887AD /* Pods-NewsflashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsflashUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsflashUITests/Pods-NewsflashUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,7 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				0E13485D1FAE8088006496B6 /* AppDelegate.swift */,
+				D00F59C11FCF6ACB00906142 /* Newsflash.xcdatamodeld */,
 				D0A114F81FBD3D5600D04102 /* Main.storyboard */,
+				D00F59C81FCFA72B00906142 /* StarredTableViewCell.swift */,
 				0E1348641FAE8088006496B6 /* Assets.xcassets */,
 				0E1348661FAE8088006496B6 /* LaunchScreen.storyboard */,
 				0E1348691FAE8088006496B6 /* Info.plist */,
@@ -153,6 +161,7 @@
 			children = (
 				D0047E201FAE895700B2B1AA /* FeedViewController.swift */,
 				D0047E221FAE898400B2B1AA /* ArticleViewController.swift */,
+				D00F59C61FCF7E8B00906142 /* StarredTableViewController.swift */,
 				D0047E241FAE8A1300B2B1AA /* StarredViewController.swift */,
 				D0047E261FAE8A4600B2B1AA /* ExploreViewController.swift */,
 			);
@@ -457,10 +466,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Newsflash/Pods-Newsflash-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ParallaxHeader/ParallaxHeader.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParallaxHeader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,7 +490,10 @@
 				D0047E271FAE8A4600B2B1AA /* ExploreViewController.swift in Sources */,
 				D0047E251FAE8A1300B2B1AA /* StarredViewController.swift in Sources */,
 				D0047E211FAE895700B2B1AA /* FeedViewController.swift in Sources */,
+				D00F59C71FCF7E8B00906142 /* StarredTableViewController.swift in Sources */,
+				D00F59C91FCFA72B00906142 /* StarredTableViewCell.swift in Sources */,
 				0E13485E1FAE8088006496B6 /* AppDelegate.swift in Sources */,
+				D00F59C31FCF6ACB00906142 /* Newsflash.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,6 +785,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D00F59C11FCF6ACB00906142 /* Newsflash.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D00F59C21FCF6ACB00906142 /* Model.xcdatamodel */,
+			);
+			currentVersion = D00F59C21FCF6ACB00906142 /* Model.xcdatamodel */;
+			path = Newsflash.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0E1348521FAE8088006496B6 /* Project object */;
 }

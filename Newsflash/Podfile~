@@ -17,8 +17,8 @@ target 'Newsflash' do
     # Pods for testing
   end
 
-  target 'Newsflash' do
-    pod 'SwiftyJSON'
-  end
+  
+  pod 'SwiftyJSON'
+  
 
 end

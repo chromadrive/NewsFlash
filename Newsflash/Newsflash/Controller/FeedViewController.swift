@@ -10,10 +10,11 @@ import UIKit
 
 class FeedViewController: UIViewController {
     
+    @IBOutlet var uriEvent: UITextField!
     var seluri : String?
 
     @IBAction func uributton(_ sender: UIButton) {
-        articleSel(uri: "eng-3487526")
+        articleSel(uri: "eng-3486266")
     }
     
 
@@ -30,7 +31,7 @@ class FeedViewController: UIViewController {
     }
     
     func articleSel(uri : String) {
-        seluri = uri
+        seluri = uriEvent.text
         performSegue(withIdentifier: "toArticle", sender: self)
     }
     

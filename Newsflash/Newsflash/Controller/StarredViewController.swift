@@ -9,9 +9,22 @@
 import UIKit
 
 class StarredViewController: UIViewController {
-
+    
+    var articles: [Article] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appDel = UIApplication.shared.delegate
+            as! AppDelegate
+        let context = appDel.persistentContainer.viewContext
+        do {
+            articles = try context.fetch(Article.fetchRequest())
+            
+        }
+        catch {
+            print("Fetch failed")
+        }
+        
 
         // Do any additional setup after loading the view.
     }
@@ -20,6 +33,11 @@ class StarredViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+ 
+    
+    
     
 
     /*
