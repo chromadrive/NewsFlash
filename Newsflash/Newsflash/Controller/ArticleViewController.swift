@@ -33,6 +33,18 @@ class ArticleViewController: UIViewController {
     var articles: [String]?
     var keywords: [String]?
     
+    @IBAction func sourceButtonPressed(sender: UIButton) {
+        let title: String = (sender.titleLabel?.text)!
+        print(title)
+        let start = title.index(title.startIndex, offsetBy: 1)
+        let end = title.index(title.endIndex, offsetBy: -1)
+        let range = start...end
+        let mySubstring = title[range]  // play
+        let index = String(mySubstring)
+        let url = articles![Int(index)!]
+        UIApplication.shared.open(NSURL(string: url)! as URL, options: [:], completionHandler: nil)
+    }
+    
     
     @IBAction func favButton(_ sender: Any) {
         let appDel = UIApplication.shared.delegate
@@ -111,20 +123,20 @@ class ArticleViewController: UIViewController {
                     let screenHeight = self.view.frame.size.height + self.summary.bounds.size.height
                     self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: screenHeight)
                     
-                    var src_count : Int = 1
-                    var buttonX: CGFloat = 20  // our Starting Offset, could be 0
-                    let buttonY : Int = Int(self.summary.bounds.size.height) + 30
-                    for _ in self.articles! {
-                        let sourceButton = UIButton(frame: CGRect(x: Int(buttonX), y: buttonY, width: 30, height: 30))
-                        buttonX = buttonX + 30
-                        
-                        sourceButton.setTitle("[\(src_count)]", for: .normal)
-                        sourceButton.setTitleColor(.blue, for: .normal)
-                        sourceButton.addTarget(self, action: Selector(("sourceButtonPressed:")), for: UIControlEvents.touchUpInside)
-                        
-                        self.view.addSubview(sourceButton)
-                        src_count += 1
-                    }
+//                    var src_count : Int = 1
+//                    var buttonX: CGFloat = 20  // our Starting Offset, could be 0
+//                    let buttonY : Int = Int(self.summary.bounds.size.height) + 30
+//                    for _ in self.articles! {
+//                        let sourceButton = UIButton(frame: CGRect(x: Int(buttonX), y: buttonY, width: 30, height: 30))
+//                        buttonX = buttonX + 30
+//
+//                        sourceButton.setTitle("[\(src_count)]", for: .normal)
+//                        sourceButton.setTitleColor(.blue, for: .normal)
+//                        sourceButton.addTarget(self, action: sourceButtonPressed(_:)), for: UIControlEvents.touchUpInside)
+//
+//                        self.view.addSubview(sourceButton)
+//                        src_count += 1
+//                    }
                     
                 }
                 
@@ -149,17 +161,17 @@ class ArticleViewController: UIViewController {
     
 
 
-    func sourceButtonPressed(sender:UIButton!) {
-        //UIApplication.shared.openURL(NSURL(string: "http://www.google.com")! as URL)
-        let title: String = (sender.titleLabel?.text)!
-        print(title)
-        let start = title.index(title.startIndex, offsetBy: 1)
-        let end = title.index(title.endIndex, offsetBy: -1)
-        let range = start...end
-        let mySubstring = title[range]  // play
-        let index = String(mySubstring)
-        let url = articles![Int(index)!]
-        UIApplication.shared.open(NSURL(string: url)! as URL, options: [:], completionHandler: nil)
-    }
+//    func sourceButtonPressed(sender:UIButton!) {
+//        //UIApplication.shared.openURL(NSURL(string: "http://www.google.com")! as URL)
+//        let title: String = (sender.titleLabel?.text)!
+//        print(title)
+//        let start = title.index(title.startIndex, offsetBy: 1)
+//        let end = title.index(title.endIndex, offsetBy: -1)
+//        let range = start...end
+//        let mySubstring = title[range]  // play
+//        let index = String(mySubstring)
+//        let url = articles![Int(index)!]
+//        UIApplication.shared.open(NSURL(string: url)! as URL, options: [:], completionHandler: nil)
+//    }
 
 }
