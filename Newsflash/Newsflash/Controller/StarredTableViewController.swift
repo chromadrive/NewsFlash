@@ -33,6 +33,20 @@ class StarredTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let appDel = UIApplication.shared.delegate
+            as! AppDelegate
+        let context = appDel.persistentContainer.viewContext
+        do {
+            articles = try context.fetch(Article.fetchRequest())
+            
+        }
+        catch {
+            print("Fetch failed")
+        }
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
