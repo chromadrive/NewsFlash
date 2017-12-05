@@ -25,7 +25,8 @@ class ArticleViewController: UIViewController {
     @IBOutlet var location: UILabel!
     @IBOutlet var summary: UILabel!
     
-    @IBOutlet var sourcesView: UIView!
+    @IBOutlet var categoryButton: UIButton!
+
     var urievent : String?
     
     var date: String?

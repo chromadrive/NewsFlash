@@ -21,6 +21,7 @@
 		D00F59C31FCF6ACB00906142 /* Newsflash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D00F59C11FCF6ACB00906142 /* Newsflash.xcdatamodeld */; };
 		D00F59C71FCF7E8B00906142 /* StarredTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F59C61FCF7E8B00906142 /* StarredTableViewController.swift */; };
 		D00F59C91FCFA72B00906142 /* StarredTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F59C81FCFA72B00906142 /* StarredTableViewCell.swift */; };
+		D057F6F21FD685D900FC20ED /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D057F6F11FD685D900FC20ED /* MapKit.framework */; };
 		D0A114F91FBD3D5600D04102 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A114F81FBD3D5600D04102 /* Main.storyboard */; };
 		DA3D3C911720A348CB575570 /* Pods_NewsflashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 396A7DF811127100CEB5DDDA /* Pods_NewsflashUITests.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		D00F59C21FCF6ACB00906142 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D00F59C61FCF7E8B00906142 /* StarredTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredTableViewController.swift; sourceTree = "<group>"; };
 		D00F59C81FCFA72B00906142 /* StarredTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredTableViewCell.swift; sourceTree = "<group>"; };
+		D057F6F11FD685D900FC20ED /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D0A114F81FBD3D5600D04102 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../NewsFeed/NewsFeed/Main.storyboard; sourceTree = "<group>"; };
 		D1FF3546154B6657A6B7C0D0 /* Pods-Newsflash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Newsflash.release.xcconfig"; path = "Pods/Target Support Files/Pods-Newsflash/Pods-Newsflash.release.xcconfig"; sourceTree = "<group>"; };
 		E0427A07AE350E3EEB7887AD /* Pods-NewsflashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsflashUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsflashUITests/Pods-NewsflashUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D057F6F21FD685D900FC20ED /* MapKit.framework in Frameworks */,
 				0CC8169472388C3D28C4E961 /* Pods_Newsflash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +174,7 @@
 		D7271F7F92EA0F8ED83DAFD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D057F6F11FD685D900FC20ED /* MapKit.framework */,
 				26C3526E69C65468B5F3155F /* Pods_Newsflash.framework */,
 				40B7C4166B0C944E204D2B89 /* Pods_NewsflashTests.framework */,
 				396A7DF811127100CEB5DDDA /* Pods_NewsflashUITests.framework */,
@@ -269,6 +273,11 @@
 					0E1348591FAE8088006496B6 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0E13486D1FAE8088006496B6 = {
 						CreatedOnToolsVersion = 9.1;

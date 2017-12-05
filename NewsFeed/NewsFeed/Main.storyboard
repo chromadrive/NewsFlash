@@ -83,14 +83,54 @@
                     <view key="view" contentMode="scaleToFill" id="n73-wM-7FR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xiU-9h-e72">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on a country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSs-d9-NK7">
+                                <rect key="frame" x="0.0" y="548" width="375" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JGQ-7b-pih"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iME-y4-HVq">
+                                <rect key="frame" x="315" y="553" width="30" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="EhU-IQ-F1v"/>
+                                    <constraint firstAttribute="height" constant="40" id="MdI-Mp-88y"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="arrow"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xiU-9h-e72" firstAttribute="centerX" secondItem="di0-BU-uVI" secondAttribute="centerX" id="40d-9v-usP"/>
+                            <constraint firstItem="di0-BU-uVI" firstAttribute="bottom" secondItem="vSs-d9-NK7" secondAttribute="bottom" constant="20" id="41G-YM-l2J"/>
+                            <constraint firstItem="di0-BU-uVI" firstAttribute="bottom" secondItem="xiU-9h-e72" secondAttribute="bottom" id="5KI-Jd-Yzh"/>
+                            <constraint firstItem="di0-BU-uVI" firstAttribute="trailing" secondItem="vSs-d9-NK7" secondAttribute="trailing" id="IcC-hb-vcK"/>
+                            <constraint firstItem="xiU-9h-e72" firstAttribute="top" secondItem="di0-BU-uVI" secondAttribute="top" id="Nmz-Aq-Ehn"/>
+                            <constraint firstItem="iME-y4-HVq" firstAttribute="leading" secondItem="vSs-d9-NK7" secondAttribute="trailing" constant="-60" id="RC4-LF-bQm"/>
+                            <constraint firstItem="xiU-9h-e72" firstAttribute="width" secondItem="n73-wM-7FR" secondAttribute="width" id="UNA-ag-Phr"/>
+                            <constraint firstItem="xiU-9h-e72" firstAttribute="centerY" secondItem="di0-BU-uVI" secondAttribute="centerY" id="X0S-3x-lTn"/>
+                            <constraint firstItem="di0-BU-uVI" firstAttribute="bottom" secondItem="iME-y4-HVq" secondAttribute="bottom" constant="25" id="f89-WL-9RP"/>
+                            <constraint firstItem="vSs-d9-NK7" firstAttribute="leading" secondItem="di0-BU-uVI" secondAttribute="leading" id="unP-00-YgV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="di0-BU-uVI"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" id="O5i-0q-eCX"/>
+                    <connections>
+                        <outlet property="arrowButton" destination="iME-y4-HVq" id="org-M7-8L1"/>
+                        <outlet property="countryLabel" destination="vSs-d9-NK7" id="Dsv-wQ-4Pt"/>
+                        <outlet property="mapView" destination="xiU-9h-e72" id="t91-AV-0Rh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bU7-OK-HSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="1138"/>
+            <point key="canvasLocation" x="716" y="1137.481259370315"/>
         </scene>
         <!--Feed-->
         <scene sceneID="0Rt-EY-0rO">
@@ -252,6 +292,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQL-dx-R3u">
+                                        <rect key="frame" x="40" y="237" width="63" height="30"/>
+                                        <state key="normal" title="Category"/>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Nyw-Cu-qaO" firstAttribute="leading" secondItem="Gaw-5U-Il4" secondAttribute="trailing" id="2Yy-6e-IpT"/>
@@ -284,6 +328,8 @@
                                     <constraint firstItem="9tK-KR-eAM" firstAttribute="leading" secondItem="16E-kl-hYa" secondAttribute="leading" constant="100" id="hhn-dZ-4nk"/>
                                     <constraint firstItem="1db-KG-OLC" firstAttribute="width" secondItem="9tK-KR-eAM" secondAttribute="width" id="kX8-nR-Vfb"/>
                                     <constraint firstItem="gXR-eI-n9L" firstAttribute="top" secondItem="16E-kl-hYa" secondAttribute="top" id="lkH-d6-gLd"/>
+                                    <constraint firstItem="mQL-dx-R3u" firstAttribute="top" secondItem="yww-jP-yT3" secondAttribute="bottom" constant="10" id="rRw-xI-W8F"/>
+                                    <constraint firstItem="mQL-dx-R3u" firstAttribute="leading" secondItem="16E-kl-hYa" secondAttribute="leading" constant="40" id="tKS-7d-SHv"/>
                                     <constraint firstItem="yww-jP-yT3" firstAttribute="leading" secondItem="16E-kl-hYa" secondAttribute="leading" constant="40" id="wwK-VK-Z2w"/>
                                     <constraint firstItem="gXR-eI-n9L" firstAttribute="leading" secondItem="16E-kl-hYa" secondAttribute="leading" id="zOM-BG-VR7"/>
                                 </constraints>
@@ -299,6 +345,7 @@
                         <viewLayoutGuide key="safeArea" id="WoK-zQ-Wiw"/>
                     </view>
                     <connections>
+                        <outlet property="categoryButton" destination="mQL-dx-R3u" id="AMf-36-Sco"/>
                         <outlet property="details" destination="9tK-KR-eAM" id="0zG-1W-UL0"/>
                         <outlet property="favButton" destination="tGq-Zp-EMO" id="lcU-GX-4Ya"/>
                         <outlet property="header" destination="PaI-M0-TFy" id="VxX-WW-COQ"/>
@@ -334,6 +381,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow" width="1202" height="1995"/>
         <image name="fav" width="1986" height="1891"/>
     </resources>
     <inferredMetricsTieBreakers>
